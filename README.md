@@ -1,6 +1,8 @@
 # What is Next.js?
 
-From the website:
+> ⚠️ Warning - This project requires Node version 18.7 or greater.
+
+From [nextjs.org/](https://nextjs.org/):
 
 ```txt
 Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
@@ -18,6 +20,28 @@ How Next.js routing works
 
 - Right now we'll focus on how pages are created in Next.js
   How tailwind works
+
+  This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 &nbsp;
 
@@ -68,36 +92,6 @@ CSS only:
 - Browse the icons at [heroicons.com](https://heroicons.com/)
 - Find the documentation at [github.com/tailwindlabs/heroicons](https://github.com/tailwindlabs/heroicons)
 
-&nbsp;  
-&nbsp;
-
-### ...more on Next.js below
-
-&nbsp;  
-&nbsp;
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -112,3 +106,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+// Add codespaces instructions.
