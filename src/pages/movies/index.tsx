@@ -1,5 +1,3 @@
-import "../../app/globals.css";
-
 import Heading from "../../components/Heading";
 
 export default function Movies() {
