@@ -105,4 +105,23 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-// Add codespaces instructions.
+## How to clone the repository using codespaces
+
+Click the "Code" dropdown button (usually green, located near the top right of the repository page).
+In the dropdown, you'll see an option for "Open with Codespaces." Click on it.
+Create a New Codespace:
+
+If no Codespaces have been created for this repository in your account, you'll have the option to create a new one.
+Click on “New codespace” at the bottom of the panel.
+This will start the process of creating a cloud-based development environment for that repository.
+Configure the Codespace (if necessary):
+
+Depending on the repository, you might have options to configure the Codespace, like selecting the branch, machine type, or configuration settings.
+After configuration, GitHub will set up the environment, which can take a few moments.
+Access the Codespace:
+
+Once set up, you'll be taken to a VS Code-like environment in your browser, loaded with the repository's code.
+You can now edit, run, and commit changes to the repository directly from this environment.
+Working with the Repository:
+
+You can work with the repository as if it was cloned on your local machine. Any changes you make can be committed and pushed back to the repository on GitHub.
