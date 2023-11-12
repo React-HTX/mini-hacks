@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import "../../styles/globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
@@ -15,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>{metadata.title}</title>
+        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={metadata.description} />
       </Head>
       <div className={inter.className}>
