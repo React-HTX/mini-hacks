@@ -1,5 +1,8 @@
 import Heading from "../../components/Heading";
 
+// You can use the utils/movieData.json file to get movie data, or use the utils/requests.js file to make HTTP requests to get data.
+// HAVE FUN CODING!!!!!
+
 export default function Movies() {
   return (
     <>
