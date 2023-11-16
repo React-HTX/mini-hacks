@@ -13,6 +13,7 @@ Whether you're an individual developer or part of a larger team, Next.js can hel
 Project file structure
 
 - You'll spend most of your time in the `pages/movies` and the `components` dir which will contain your movie listings react code.
+- You're also going to use the Nextjs Image component. There's an example of it in the movies file. Here's a [https://nextjs.org/docs/pages/api-reference/components/image](link) to the documentation for it as well.
 
 How Next.js routing works
 
