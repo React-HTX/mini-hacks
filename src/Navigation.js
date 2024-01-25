@@ -1,27 +1,29 @@
-"use client"
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { useState } from "react";
-
-// Create heading component
-
-const Header = () => {
+const Navigation = () => {
     const [searchText, setSearchText] = useState("");
-    const router = useRouter();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (searchText) {
-            router.push(`/movies/search?query=${searchText}`);
+        if (searchText.trim()) {
+            navigate(`/movies/search?query=${searchText.trim()}`);
         }
     }
 
     return (
         <nav className="bg-black p-4">
             <div className="container mx-auto flex justify-between items-center">
-                <Link className="text-white text-2xl font-bold" href="/">Movie Listings App</Link>
-                <form onSubmit={e => handleSubmit(e)}>
+                <Link to="/" className="text-white text-2xl font-bold">Movie Listings App</Link>
+
+                <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                    <li><Link to="/" className="hover:text-blue-200">Home</Link></li>
+                    <li><Link to="/sortPage" className="hover:text-blue-200">Sort Page</Link></li>
+                    {/* Add more links as needed */}
+                </ul>
+
+                <form onSubmit={handleSubmit}>
                     <div className="relative flex-wrap items-center">
                         <input
                             onChange={e => setSearchText(e.target.value)}
@@ -34,7 +36,8 @@ const Header = () => {
                 </form>
             </div>
         </nav>
-    )
+    );
 };
 
-export default Header;
+export default Navigation;
+
