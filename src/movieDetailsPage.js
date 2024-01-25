@@ -1,9 +1,27 @@
-import { getMovieDetails, getSimilarMovies } from "@/app/utils/requests";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieDetails, getSimilarMovies } from "./utils/request";
 
-async function MovieDetailsPage({ params }) {
+const MovieDetailsPage = () => {
+    const { id } = useParams();
     const IMAGE_BASE_URL = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
-    const movieDetails = await getMovieDetails(params.id);
-    const similarMovies = await getSimilarMovies(params.id);
+    const [movieDetails, setMovieDetails] = useState(null);
+    const [similarMovies, setSimilarMovies] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const details = await getMovieDetails(id);
+            const similar = await getSimilarMovies(id);
+            setMovieDetails(details);
+            setSimilarMovies(similar);
+        };
+
+        fetchData();
+    }, [id]); // Rerun when `id` changes
+
+    if (!movieDetails || !movieDetails.genres) {
+        return <div>Loading...</div>; // Or any other loading state
+    }
 
     return (
         <div>
@@ -52,6 +70,6 @@ async function MovieDetailsPage({ params }) {
             </div>
         </div>
     );
-}
+};
 
 export default MovieDetailsPage;
