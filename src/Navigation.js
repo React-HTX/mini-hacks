@@ -20,6 +20,7 @@ const Navigation = () => {
                 <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                     <li><Link to="/" className="hover:text-blue-200">Home</Link></li>
                     <li><Link to="/sortPage" className="hover:text-blue-200">Sort Page</Link></li>
+                    <li><Link to="/counter" className="hover:text-blue-200">Counter Page</Link></li>
                     {/* Add more links as needed */}
                 </ul>
 

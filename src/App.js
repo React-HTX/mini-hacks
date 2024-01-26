@@ -10,6 +10,7 @@ import Navigation from './Navigation';
 import SortPage from './sortPage';
 import MovieDetailsPage from './movieDetailsPage';
 import SearchPage from './searchPage';
+import Counter from './Counter';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route path="/sortPage" element={<SortPage />} />
         <Route path="/movies/:id" element={<MovieDetailsPage />} />
         <Route path="/movies/search" element={<SearchPage />} />
-
+        <Route path="/counter" element={<Counter />} />
         <Route path="*" element={<NotFound />} />
         {/* Define more routes here */}
       </Routes>
