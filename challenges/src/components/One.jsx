@@ -12,7 +12,7 @@ const One = () => {
     <main>
       <div className="section">
         <div className="section-center">
-          <h2>Log Correct State</h2>
+          <h2>Log Current State</h2>
           <p>
             Open your console, then click on the button to log state. Is the
             result what you expected?
