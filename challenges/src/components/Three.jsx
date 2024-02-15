@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Two = () => {
+const Three = () => {
   const [age, setAge] = useState(12);
 
   function handleClick() {
@@ -34,4 +34,4 @@ const Two = () => {
   );
 };
 
-export default Two;
+export default Three;
