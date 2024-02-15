@@ -252,12 +252,6 @@ Challenges/Solutions
 ===============
 */
 
-.result {
-  margin-top: 2rem;
-}
-.bold {
-  font-weight: 700;
-}
 .form-container {
   margin: 2rem;
 }
@@ -266,6 +260,19 @@ Challenges/Solutions
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+.result {
+  margin-top: 2rem;
+}
+.bold {
+  font-weight: 700;
+}
+.score {
+  padding: 2rem;
+}
+.hover {
+  background-color: var(--clr-grey-9);
+  border: 1px solid var(--clr-grey-1);
 }
 label {
   font-size: 1.25rem;
