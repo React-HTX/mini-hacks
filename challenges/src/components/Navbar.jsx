@@ -42,6 +42,11 @@ export const Navbar = () => {
                 two
               </Link>
             </li>
+            <li>
+              <Link className="link" to="/three">
+                three
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
