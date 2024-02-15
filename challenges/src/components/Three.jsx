@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 
 const Three = () => {
-  const [age, setAge] = useState(12);
+  const [inputsA, setInputsA] = useState({
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'johndoe@email.com',
+  });
 
-  function handleClick() {
-    setAge(age + 1);
-    setAge(age + 1);
-    setAge(age + 1);
+  function handleFormOneChange(e) {
+    setInputsA({
+      ...inputsA,
+      firstName: e.target.value,
+    });
   }
 
   return (
@@ -22,11 +27,17 @@ const Three = () => {
           </p>
         </div>
         <div className="section-center">
-          <button className="btn" type="button" onClick={handleClick}>
-            ADD YEARS
-          </button>
-          <div className="result">
-            <h3>AGE: {age}</h3>
+          <div className="form-container">
+            <label>First Name:</label>
+            <input
+              value={inputsA.firstName}
+              onChange={(e) => handleFormOneChange(e)}
+            />
+          </div>
+          <div>
+            <p>
+              {inputsA.firstName} {inputsA.lastName} {inputsA.email}
+            </p>
           </div>
         </div>
       </div>
