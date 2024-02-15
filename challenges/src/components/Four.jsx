@@ -1,151 +1,64 @@
 import React, { useState } from 'react';
 
-const Three = () => {
-  // Form One useState
-  const [formOne, setFormOne] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'johndoe@email.com',
-  });
-  // Form Two useState
-  const [formTwo, setFormTwo] = useState({
-    name: 'Barb Hanson',
-    details: {
-      age: 23,
-      city: 'H-Town',
-      passion: 'Coding',
-    },
-  });
-  // Form Three useState
-  const [formThree, setFormThree] = useState({
-    person: 'Jane Smith',
-  });
-
-  // Form Two Change Handlers
-  function handleNameChange(e) {
-    setFormTwo({ name: e.target.value });
+function initializeTodos() {
+  const todos = [];
+  for (let i = 0; i < 10; i++) {
+    todos.push({
+      id: i,
+      text: 'Item ' + (i + 1),
+    });
   }
 
-  function handleAgeChange(e) {
-    setFormTwo({ details: { age: e.target.value } });
-  }
+  console.log('todos', todos);
+  return todos;
+}
 
-  function handleCityChange(e) {
-    setFormTwo({ details: { city: e.target.value } });
-  }
-
-  function handlePassionChange(e) {
-    setFormTwo({ details: { passion: e.target.value } });
-  }
-
-  // Form Three Change Handler
-  function handlePersonChange(e) {
-    formThree.person = e.target.value;
-    setFormThree({ formThree });
-  }
+const Four = () => {
+  const [todos, setTodos] = useState(initializeTodos());
+  const [text, setText] = useState('');
 
   return (
     <main>
       <div className="section">
         <div className="section-center">
-          <h2>Update the Objects</h2>
+          <h2>Initialize the Todo List</h2>
           <p>
-            Update the input fields below. As you update, all results should
-            remain visible and the only change should be the input field you are
-            updating. Is the result what you expected?
+            Open your console, then enter a new item on the todo list. The todo
+            list should only log once for every completed entry. Is the result
+            what you expected?
             <br />
             Correct the logic in your code.
           </p>
         </div>
 
-        {/* Form One JSX */}
         <div className="section-center">
           <div className="form-container">
-            <h3>Form One Challenge</h3>
             <div className="form-input">
-              <label>First Name:</label>
-              <input
-                value={formOne.firstName}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, firstName: e.target.value })
-                }
-              />
-            </div>
-            <div className="form-input">
-              <label>Last Name:</label>
-              <input
-                value={formOne.lastName}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, lastName: e.target.value })
-                }
-              />
-            </div>
-            <div className="form-input">
-              <label>Email:</label>
-              <input
-                value={formOne.email}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, email: e.target.value })
-                }
-              />
+              <input value={text} onChange={(e) => setText(e.target.value)} />
+              <button
+                onClick={() => {
+                  setText('');
+                  setTodos([
+                    {
+                      id: todos.length,
+                      text: text,
+                    },
+                    ...todos,
+                  ]);
+                }}
+                className="btn"
+              >
+                Add
+              </button>
             </div>
           </div>
-          <div>
-            <p className="bold">
-              RESULT: {formOne.firstName} {formOne.lastName} {formOne.email}
-            </p>
-            <p>Expected Result: firstName lastName email</p>
-            <p>Example: John Doe johndoe@email.com</p>
-          </div>
-        </div>
-
-        {/* Form Two JSX */}
-        <div className="section-center">
-          <div className="form-container">
-            <h3>Form Two Challenge</h3>
-            <div className="form-input">
-              <label>Name:</label>
-              <input value={formTwo.name} onChange={handleNameChange} />
-            </div>
-            <div className="form-input">
-              <label>Age:</label>
-              <input value={formTwo.details.age} onChange={handleAgeChange} />
-            </div>
-            <div className="form-input">
-              <label>City:</label>
-              <input value={formTwo.details.city} onChange={handleCityChange} />
-            </div>
-            <div className="form-input">
-              <label>Passion:</label>
-              <input
-                value={formTwo.details.passion}
-                onChange={handlePassionChange}
-              />
-            </div>
-          </div>
-          <div>
-            <p className="bold">
-              RESULT: {formTwo.name} {formTwo.details.age}{' '}
-              {formTwo.details.city} {formTwo.details.passion}
-            </p>
-            <p>Expected Result: name age city passion</p>
-            <p>Example: Barb Hason 23 H-Town Coding</p>
-          </div>
-        </div>
-
-        {/* Form Three JSX */}
-        <div className="section-center">
-          <div className="form-container">
-            <h3>Form Three Challenge</h3>
-            <div className="form-input">
-              <label>Name:</label>
-              <input value={formThree.person} onChange={handlePersonChange} />
-            </div>
-          </div>
-          <div>
-            <p className="bold">RESULT: {formThree.person}</p>
-            <p>Expected Result: name</p>
-            <p>Example: Jane Smith</p>
+          <div className="result">
+            <h3>Results</h3>
+            <ul>
+              {todos.map((todo) => (
+                <li key={todo.id}>{todo.text}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -153,4 +66,4 @@ const Three = () => {
   );
 };
 
-export default Three;
+export default Four;
