@@ -5,6 +5,7 @@ import Home from './components/Home';
 import One from './components/One';
 import Two from './components/Two';
 import Three from './components/Three';
+import Four from './components/Four';
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Route path="/one" element={<One />} />
         <Route path="/two" element={<Two />} />
         <Route path="/three" element={<Three />} />
-        {/* <Route path="/four" element={<Four />} />
-        <Route path="/five" element={<Five />} />
+        <Route path="/four" element={<Four />} />
+        {/* <Route path="/five" element={<Five />} />
         <Route path="/six" element={<Six />} /> */}
       </Routes>
     </Router>
