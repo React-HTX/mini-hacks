@@ -255,3 +255,27 @@ Challenges/Solutions
 .result {
   margin-top: 2rem;
 }
+.bold {
+  font-weight: 700;
+}
+.form-container {
+  margin: 2rem;
+}
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+label {
+  font-size: 1.25rem;
+  color: var(--clr-primary-1);
+}
+input {
+  padding: 0.25rem 0.5rem;
+  width: 15rem;
+  border-radius: var(--radius);
+  border: none;
+  margin: 0 0.5rem;
+  font-size: 1.25rem;
+}
