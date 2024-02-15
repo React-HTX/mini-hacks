@@ -150,9 +150,10 @@ p {
   border-radius: var(--radius);
 }
 .btn:hover {
-  color: var(--clr-grey-1);
+  color: var(--clr-primary-5);
   background: var(--clr-grey-10);
   border-color: var(--clr-grey-5);
+  font-weight: 900;
 }
 
 /*
@@ -243,4 +244,14 @@ nav {
     padding: 0;
     background: transparent;
   }
+}
+
+/*
+=============== 
+Challenges/Solutions
+===============
+*/
+
+.result {
+  margin-top: 2rem;
 }
