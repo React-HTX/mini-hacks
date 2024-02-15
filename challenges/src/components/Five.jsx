@@ -1,69 +1,59 @@
 import React, { useState } from 'react';
 
-function initializeTodos() {
-  const todos = [];
-  for (let i = 0; i < 10; i++) {
-    todos.push({
-      id: i,
-      text: 'Item ' + (i + 1),
-    });
-  }
-
-  console.log('todos', todos);
-  return todos;
-}
-
-const Four = () => {
-  const [todos, setTodos] = useState(initializeTodos());
-  const [text, setText] = useState('');
+export default function Five() {
+  const [isPlayerA, setIsPlayerA] = useState(true);
 
   return (
     <main>
       <div className="section">
         <div className="section-center">
-          <h2>Initialize the Todo List</h2>
+          <h2>Preserving and Resetting State</h2>
           <p>
-            Open your console, then enter a new item on the todo list. The todo
-            list should only log once for every completed entry. Is the result
-            what you expected?
+            Add different scores to each player. Each score should differ and
+            not reflect the other player's score. Is the result what you
+            expected?
             <br />
             Correct the logic in your code.
           </p>
         </div>
 
         <div className="section-center">
-          <div className="form-container">
-            <div className="form-input">
-              <input value={text} onChange={(e) => setText(e.target.value)} />
-              <button
-                onClick={() => {
-                  setText('');
-                  setTodos([
-                    {
-                      id: todos.length,
-                      text: text,
-                    },
-                    ...todos,
-                  ]);
-                }}
-                className="btn"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-          <div className="result">
-            <h3>Results</h3>
-            <ul>
-              {todos.map((todo) => (
-                <li key={todo.id}>{todo.text}</li>
-              ))}
-            </ul>
-          </div>
+          {isPlayerA ? <Counter person="John" /> : <Counter person="Jane" />}
+          <button
+            className="btn result"
+            onClick={() => {
+              setIsPlayerA(!isPlayerA);
+            }}
+          >
+            Next Player!
+          </button>
         </div>
       </div>
     </main>
   );
-};
+}
 
-export default Four;
+function Counter({ person }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div
+      className={`section-center score ${className}`}
+      onPointerEnter={() => setHover(true)}
+      onPointerLeave={() => setHover(false)}
+    >
+      <h3>
+        {person}'s score: {score}
+      </h3>
+      <button className="btn" onClick={() => setScore(score + 1)}>
+        Add one
+      </button>
+    </div>
+  );
+}
