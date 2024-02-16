@@ -15,8 +15,8 @@ const Two = () => {
         <div className="section-center">
           <h2>Set State Using Previous State</h2>
           <p>
-            Click on the button below to add 3 more years to age. Is the result
-            what you expected?
+            Click on the button below to add <strong>3 more years</strong> to
+            age. Is the result what you expected?
             <br />
             Correct the logic in your code.
           </p>
