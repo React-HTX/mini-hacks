@@ -2,9 +2,14 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div className="section">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-    </div>
+    <main>
+      <div className="home-center">
+        <h1>
+          Common Mistakes
+          <br />& <span>Troubleshooting</span>
+        </h1>
+      </div>
+    </main>
   );
 };
 

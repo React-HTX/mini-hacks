@@ -204,9 +204,6 @@ nav {
   color: var(--clr-primary-5);
   padding-left: 1.5rem;
 }
-.social-icons {
-  display: none;
-}
 .links-container {
   height: 0;
   overflow: hidden;
@@ -244,6 +241,31 @@ nav {
     padding: 0;
     background: transparent;
   }
+}
+
+/*
+=============== 
+Home Page
+===============
+*/
+
+.home-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.home-center h1 {
+  line-height: 4rem;
+}
+
+.home-center h1 span {
+  font-family: 'inconsolata', monospace;
+  font-size: 3.3rem;
+  font-style: italic;
+  color: var(--clr-primary-3);
+  border-bottom: 1px solid var(--clr-primary-3);
 }
 
 /*
