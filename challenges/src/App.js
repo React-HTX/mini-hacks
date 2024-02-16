@@ -7,7 +7,6 @@ import Two from './components/Two';
 import Three from './components/Three';
 import Four from './components/Four';
 import Five from './components/Five';
-import Six from './components/Six';
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
         <Route path="/three" element={<Three />} />
         <Route path="/four" element={<Four />} />
         <Route path="/five" element={<Five />} />
-        <Route path="/six" element={<Six />} />
       </Routes>
     </Router>
   );
