@@ -14,12 +14,10 @@ The only additional install is `"react-router-dom": "^6.21.3",`.
 
 # useState - Common Mistakes & Troubleshooting
 
-## Available Scripts
+## Anatomy
 
-In the project directory, you can run:
-START IN HERE SOMEWHERE!!
+`const [state, setState] = useState(initialState)`
 
-### `yarn start`
+### EXTRA
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
