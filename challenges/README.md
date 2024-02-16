@@ -42,7 +42,8 @@ Industry standard - NOT REQUIRED!
 
 ## Example
 
-````import { useState } from 'react';
+````
+import { useState } from 'react';
 
 export default function myComponent() {
     const [name, setName] = useState('');
@@ -52,7 +53,8 @@ export default function myComponent() {
     }
 }
 
-//... rest of code.```
+//... rest of code.
+```
 
 
 
