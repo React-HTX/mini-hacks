@@ -66,11 +66,10 @@ When you need to update state based on the previous state, use the function form
 The function form of setState receives the previous state as an argument.
 This way, you can access the previous state and update it accordingly.
 ***When you set a function as the argument of the setState method, React will pass the previous state to that function.***
-
-
 */
+
 /*
-3rd option
+3rd option for problem One:
 function handleClick() {
   setCount(count + 1);
   setCount((count) => {
