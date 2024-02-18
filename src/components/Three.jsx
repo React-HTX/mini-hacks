@@ -36,7 +36,7 @@ const Three = () => {
     setFormTwo({
       ...formTwo, // copy old state
       details: {
-        ...formTwo.details,
+        ...formTwo.details, // copy nexted old state
         age: e.target.value,
       },
     });
