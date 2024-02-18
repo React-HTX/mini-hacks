@@ -23,39 +23,58 @@ const Three = () => {
 
   // Form Two Change Handlers
   function handleNameChange(e) {
-    setFormTwo({ ...formTwo, name: e.target.value });
+    // wrong way
+    // setFormTwo({ name: e.target.value });
+    // right way
+    setFormTwo({ ...formTwo, name: e.target.value }); // copy old state and update name
   }
 
   function handleAgeChange(e) {
+    // wront way
+    // setFormTwo({ details: { age: e.target.value } });
+    // right way
     setFormTwo({
+      ...formTwo, // copy old state
       details: {
-        ...formTwo,
-        details: { ...formTwo.details, age: e.target.value },
+        ...formTwo.details,
+        age: e.target.value,
       },
     });
   }
 
   function handleCityChange(e) {
+    // wrong way
+    // setFormTwo({ details: { city: e.target.value } });
+    //right way
     setFormTwo({
+      ...formTwo,
       details: {
-        ...formTwo,
-        details: { ...formTwo.details, city: e.target.value },
+        ...formTwo.details,
+        city: e.target.value,
       },
     });
   }
 
   function handlePassionChange(e) {
+    // wrong way
+    // setFormTwo({ details: { passion: e.target.value } });
+    // right way
     setFormTwo({
+      ...formTwo,
       details: {
-        ...formTwo,
-        details: { ...formTwo.details, passion: e.target.value },
+        ...formTwo.details,
+        passion: e.target.value,
       },
     });
   }
 
   // Form Three Change Handler
-  // Obj.is
   function handlePersonChange(e) {
+    // wrong way --> obj.is
+    // formThree.person = e.target.value;
+    // setFormThree({ formThree });
+
+    // right way
     setFormThree({ ...formThree, person: e.target.value });
   }
 
@@ -169,3 +188,20 @@ const Three = () => {
 };
 
 export default Three;
+
+/*
+Form 1
+Treat any JavaScript object that you put into state as "immutable", meaning read-only.
+Replace it! Don't mutate it!
+Use the spread operator to make a copy of the old state, and to update the new state.
+
+Form 2
+Nested objects require a deep copy!
+You need to create a copy of the object you're updating, as well as any object "containing" it on the way updwards.
+
+Form 3 --> Obj.is static method --> go read about this!
+You mutated an existing object, and passed it back to the setState function.
+You should replace it with a new object.
+
+All of the above --> The same goes for arrays!
+*/
