@@ -23,25 +23,40 @@ const Three = () => {
 
   // Form Two Change Handlers
   function handleNameChange(e) {
-    setFormTwo({ name: e.target.value });
+    setFormTwo({ ...formTwo, name: e.target.value });
   }
 
   function handleAgeChange(e) {
-    setFormTwo({ details: { age: e.target.value } });
+    setFormTwo({
+      details: {
+        ...formTwo,
+        details: { ...formTwo.details, age: e.target.value },
+      },
+    });
   }
 
   function handleCityChange(e) {
-    setFormTwo({ details: { city: e.target.value } });
+    setFormTwo({
+      details: {
+        ...formTwo,
+        details: { ...formTwo.details, city: e.target.value },
+      },
+    });
   }
 
   function handlePassionChange(e) {
-    setFormTwo({ details: { passion: e.target.value } });
+    setFormTwo({
+      details: {
+        ...formTwo,
+        details: { ...formTwo.details, passion: e.target.value },
+      },
+    });
   }
 
   // Form Three Change Handler
+  // Obj.is
   function handlePersonChange(e) {
-    formThree.person = e.target.value;
-    setFormThree({ formThree });
+    setFormThree({ ...formThree, person: e.target.value });
   }
 
   return (
