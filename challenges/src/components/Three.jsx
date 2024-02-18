@@ -66,27 +66,21 @@ const Three = () => {
               <label>First Name:</label>
               <input
                 value={formOne.firstName}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, firstName: e.target.value })
-                }
+                onChange={(e) => setFormOne({ firstName: e.target.value })}
               />
             </div>
             <div className="form-input">
               <label>Last Name:</label>
               <input
                 value={formOne.lastName}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, lastName: e.target.value })
-                }
+                onChange={(e) => setFormOne({ lastName: e.target.value })}
               />
             </div>
             <div className="form-input">
               <label>Email:</label>
               <input
                 value={formOne.email}
-                onChange={(e) =>
-                  setFormOne({ ...formOne, email: e.target.value })
-                }
+                onChange={(e) => setFormOne({ email: e.target.value })}
               />
             </div>
           </div>
