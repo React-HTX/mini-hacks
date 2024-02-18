@@ -3,10 +3,28 @@ import React, { useState } from 'react';
 const One = () => {
   const [count, setCount] = useState(0);
 
+  /*
+  Wrong way!
   function handleClick() {
     setCount(count + 1);
     console.log(count);
   }
+  */
+
+  // Correct way!
+  function handleClick() {
+    setCount(count + 1);
+  }
+  console.log(count);
+
+  /*
+  2nd option
+  function handleClick() {
+    const nextCount = count + 1;
+    setCount(nextCount);
+    console.log(nextCount);
+  }
+  */
 
   return (
     <main>
@@ -31,3 +49,12 @@ const One = () => {
 };
 
 export default One;
+
+/*
+REMEBER!
+The set function only updates state on the next render.
+State updates in React are asynchronous, and the state is not updated immediately after calling setState.
+The update is put into a queue, but React may batch multiple setState calls into a single update for better performance.
+Once all are batched, the state is updated and the component re-renders.
+This optimization helps to avoid unnecessary re-renders and improve performance.
+*/
