@@ -308,3 +308,15 @@ input {
   margin: 0 0.5rem;
   font-size: 1.25rem;
 }
+
+/*
+=============== 
+Demo Page
+===============
+*/
+.demo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
