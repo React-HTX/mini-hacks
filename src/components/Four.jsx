@@ -14,7 +14,11 @@ function initializeTodos() {
 }
 
 const Four = () => {
-  const [todos, setTodos] = useState(initializeTodos());
+  // Wrong way!
+  // const [todos, setTodos] = useState(initializeTodos());
+
+  // Correct way!
+  const [todos, setTodos] = useState(initializeTodos);
   const [text, setText] = useState('');
 
   return (
@@ -24,8 +28,8 @@ const Four = () => {
           <h2>Initialize the Todo List</h2>
           <p>
             Open your console, then enter a new item on the todo list. The todo
-            list should only log once for every completed entry. Is the result
-            what you expected?
+            list should only log once on initial render. Is the result what you
+            expected?
             <br />
             Correct the logic in your code.
           </p>
