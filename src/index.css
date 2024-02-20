@@ -314,9 +314,45 @@ input {
 Demo Page
 ===============
 */
-.demo-container {
+.demo-links {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+.demo-link {
+  color: var(--clr-grey-3);
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.demo-link:hover {
+  border-bottom: 2px solid var(--clr-primary-5);
+  color: var(--clr-primary-5);
+}
+.demo-container {
+  margin-top: 2rem;
+}
+.counter-score {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.counter {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.counter-checked {
+  margin-top: 1rem;
+}
+.input-checked {
+  width: auto;
 }
