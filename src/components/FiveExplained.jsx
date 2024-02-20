@@ -3,7 +3,7 @@ import DemoLinks from './demo/DemoLinks';
 import DemoComps from './demo/DemoComps';
 
 export default function FiveExplained() {
-  const [id, setId] = useState('two-counters');
+  const [id, setId] = useState('example-1');
 
   function handleClick(e) {
     if (e.target.id === id) {
