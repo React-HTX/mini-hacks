@@ -9,9 +9,9 @@ export default function Five() {
         <div className="section-center">
           <h2>Preserving and Resetting State</h2>
           <p>
-            Add different scores to each player. Each score should differ and
-            not reflect the other player's score. Is the result what you
-            expected?
+            Add scores to the first player. Now, switch to the next player. The
+            scorecard should reset and not reflect the previous player's score.
+            Is the result what you expected?
             <br />
             Correct the logic in your code.
           </p>
