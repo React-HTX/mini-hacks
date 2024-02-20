@@ -18,6 +18,7 @@ export default function Five() {
         </div>
 
         <div className="section-center">
+          {/* Wrong way! --> Please see "Five Explained" for answers */}
           {isPlayerA ? <Counter person="John" /> : <Counter person="Jane" />}
           <button
             className="btn result"
