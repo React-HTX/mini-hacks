@@ -11,7 +11,7 @@ const Counter = () => {
 
   return (
     <div
-      className={`section-center score ${className}`}
+      className={`counter-score ${className}`}
       onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}
     >
