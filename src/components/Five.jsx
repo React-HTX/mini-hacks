@@ -7,7 +7,7 @@ export default function Five() {
     <main>
       <div className="section">
         <div className="section-center">
-          <h2>Preserving and Resetting State</h2>
+          <h2>Reset State</h2>
           <p>
             Add different scores to each player. Each score should differ and
             not reflect the other player's score. Is the result what you
