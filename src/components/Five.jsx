@@ -7,7 +7,7 @@ export default function Five() {
     <main>
       <div className="section">
         <div className="section-center">
-          <h2>Preserving and Resetting State</h2>
+          <h2>Reset State</h2>
           <p>
             Add scores to the first player. Now, switch to the next player. The
             scorecard should reset and not reflect the previous player's score.
@@ -58,3 +58,13 @@ function Counter({ person }) {
     </div>
   );
 }
+
+/*
+We still have 2 different counters, except now we are attempting to show one counter over another, based on clicking on the button, "next player".
+THE PROBLEM:
+Both counters (same component type) are sitting in the same position in the render tree.
+When you click on "next player", the counter state does not get reset.
+React is looking at the position in the UI tree, NOT the JSX markup.
+
+NEXT STEP: Go look at ExampleTwo
+*/
