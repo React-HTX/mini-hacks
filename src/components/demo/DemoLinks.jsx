@@ -2,14 +2,29 @@ import React from 'react';
 
 const DemoLinks = ({ handleClick }) => {
   return (
-    <div className="demo-header">
-      <button className="btn" id="two-counters" onClick={(e) => handleClick(e)}>
-        Demo Link 1
+    <>
+      <button
+        className="demo-link"
+        id="example-1"
+        onClick={(e) => handleClick(e)}
+      >
+        Example 1
       </button>
-      <button className="btn" id="demo-two" onClick={(e) => handleClick(e)}>
-        Demo Link 2
+      <button
+        className="demo-link"
+        id="example-2"
+        onClick={(e) => handleClick(e)}
+      >
+        Example 2
       </button>
-    </div>
+      <button
+        className="demo-link"
+        id="example-3"
+        onClick={(e) => handleClick(e)}
+      >
+        Example 3
+      </button>
+    </>
   );
 };
 
