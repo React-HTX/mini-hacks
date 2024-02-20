@@ -26,3 +26,15 @@ const ExampleOne = () => {
 };
 
 export default ExampleOne;
+
+/*
+When you add state to a component, the state does NOT live inside the component.
+It lives in React (React puts it on a shelf)!
+React associates each piece of state to the correct component, dependent upon where that state sits in the render tree.
+<Counter /> and <Counter /> are currently at 2 different positions in the render tree.
+Add scores to each player:
+If you "uncheck" the checkbox, the second <Counter /> is removed from the render tree.
+If you "check" the checkbox, the second <Counter /> is added to the render tree and it begins with the initial score of zero.
+
+NEXT STEP: Go look at component Five
+*/
