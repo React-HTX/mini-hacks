@@ -19,10 +19,10 @@ const DemoLinks = ({ handleClick }) => {
       </button>
       <button
         className="demo-link"
-        id="example-3"
+        id="solution"
         onClick={(e) => handleClick(e)}
       >
-        Example 3
+        Solution
       </button>
     </>
   );
