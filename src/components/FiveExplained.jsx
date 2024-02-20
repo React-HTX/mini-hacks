@@ -15,8 +15,12 @@ export default function FiveExplained() {
   return (
     <div className="section">
       <div className="section-center">
-        <DemoLinks handleClick={handleClick} />
-        <DemoComps btnId={id} />
+        <div className="demo-links">
+          <DemoLinks handleClick={handleClick} />
+        </div>
+        <div className="demo-container">
+          <DemoComps btnId={id} />
+        </div>
       </div>
     </div>
   );
