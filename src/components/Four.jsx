@@ -73,7 +73,7 @@ const Four = () => {
 export default Four;
 
 /*
-When you initialize state with a function, and CALL that function on initializtion, the function will be called on every render.
+When you initialize state with a function, and CALL that function on initialization, the function will be called on every render.
 This is not what you want.
 This is considered wasteful and expensive.
 Instead, you should pass the function itself to useState, and let React call it only once, when the component is first rendered.

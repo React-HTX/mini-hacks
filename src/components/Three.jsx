@@ -30,7 +30,7 @@ const Three = () => {
   }
 
   function handleAgeChange(e) {
-    // wront way
+    // wrong way
     // setFormTwo({ details: { age: e.target.value } });
     // right way
     setFormTwo({
