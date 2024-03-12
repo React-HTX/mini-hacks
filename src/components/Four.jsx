@@ -14,7 +14,7 @@ function initializeTodos() {
 }
 
 const Four = () => {
-  // Wrong way!
+  // Wrong way!!
   // const [todos, setTodos] = useState(initializeTodos());
 
   // Correct way!
