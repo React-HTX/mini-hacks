@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import AuthContext from "../utils/auth-context";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+  const logoutHandler = () => {
+    authCtx.logout();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,16 +26,29 @@ const Navigation = () => {
         </Link>
 
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-          <li>
-            <Link to="/" className="hover:text-blue-200">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/sortPage" className="hover:text-blue-200">
-              Sort Page
-            </Link>
-          </li>
+          {!isLoggedIn && (
+            <li>
+              <Link to="/auth">Login</Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <>
+              <li>
+                <Link to="/" className="hover:text-blue-200">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/sortPage" className="hover:text-blue-200">
+                  Sort Page
+                </Link>
+              </li>
+              <li>
+                <button onClick={logoutHandler}>Logout</button>
+              </li>
+            </>
+          )}
+
           {/* Add more links as needed */}
         </ul>
 
