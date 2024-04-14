@@ -24,14 +24,12 @@ const Navigation = () => {
         <Link to="/" className="text-white text-2xl font-bold">
           Movie Listings App
         </Link>
-
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-          {!isLoggedIn && (
+          {!isLoggedIn ? (
             <li>
               <Link to="/auth">Login</Link>
             </li>
-          )}
-          {isLoggedIn && (
+          ) : (
             <>
               <li>
                 <Link to="/" className="hover:text-blue-200">
