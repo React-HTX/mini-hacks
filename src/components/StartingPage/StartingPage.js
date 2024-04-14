@@ -9,7 +9,7 @@ const StartingPageContent = () => {
 
   return (
     <section className={classes.starting}>
-      <h1>{isLoggedIn ? <Home /> : "Please Login in to view Movies!"}</h1>
+      {!isLoggedIn ? <h1> Please Login in to view Movies!</h1> : <Home />}
     </section>
   );
 };
