@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import { getTrendingMovies } from "../utils/request";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState("");
   const [selectedId, setSelectedId] = useState(null); // New state for tracking selected movie's ID
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -19,6 +21,7 @@ const Home = () => {
   const handleCardClick = (movie) => {
     setSelectedTitle(movie.title);
     setSelectedId(movie.id); // Update the selected movie's ID
+    navigate(`/movies/${movie.id}`);
   };
 
   return (
