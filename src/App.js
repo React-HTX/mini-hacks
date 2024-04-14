@@ -1,34 +1,46 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
-import NotFound from './notFound'
-import Home from './Home';
-import Navigation from './Navigation';
-import SortPage from './sortPage';
-import MovieDetailsPage from './movieDetailsPage';
-import SearchPage from './searchPage';
-
+import React, { useContext } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Navigation from "./components/Navigation";
+import SortPage from "./pages/SortPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
+import SearchPage from "./pages/SearchResults";
+import StartingPageContent from "./components/StartingPage/StartingPage";
+import AuthContext from "./utils/auth-context";
+import AuthPage from "./pages/AuthPage";
 
 function App() {
-  return (
-    <Router>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sortPage" element={<SortPage />} />
-        <Route path="/movies/:id" element={<MovieDetailsPage />} />
-        <Route path="/movies/search" element={<SearchPage />} />
+  const authCtx = useContext(AuthContext);
 
-        <Route path="*" element={<NotFound />} />
+  return (
+    <>
+      <Navigation />
+
+      <Routes>
+        {authCtx.isLoggedIn && (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/sortPage" element={<SortPage />} />
+            <Route path="/movies/:id" element={<MovieDetailsPage />} />
+            <Route path="/movies/search" element={<SearchPage />} />
+            <Route path="*" element={<NotFound />} />
+          </>
+        )}
+
+        {!authCtx.isLoggedIn ? (
+          <>
+            <Route path="/" element={<StartingPageContent />} />
+            <Route path="/auth" element={<AuthPage />} />
+          </>
+        ) : (
+          <Route path="*" element=<Navigate to="/" /> />
+        )}
+
         {/* Define more routes here */}
       </Routes>
-    </Router>
+    </>
   );
 }
 
-
 export default App;
-
