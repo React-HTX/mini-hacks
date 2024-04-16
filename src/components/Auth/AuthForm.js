@@ -28,8 +28,6 @@ const AuthForm = () => {
     setIsLoading(true);
     let url;
 
-    console.log(process.env.REACT_APP_SIGNUP_API_KEY);
-    console.log(process.env.REACT_APP_SIGNINWITHPASSWORD_API_KEY);
     if (isLogin) {
       url = `${process.env.REACT_APP_SIGNINWITHPASSWORD_API_KEY}`;
     } else {
