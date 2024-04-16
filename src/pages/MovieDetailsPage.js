@@ -73,7 +73,7 @@ const MovieDetailsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {similarMovies.map((movie) => {
               return (
-                <div>
+                <div key={movie.id}>
                   <img src={IMAGE_BASE_URL + movie.poster_path} />
                   <div>
                     <h5 className="text-black">{movie.title}</h5>
