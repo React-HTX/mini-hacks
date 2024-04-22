@@ -18,22 +18,16 @@ function App() {
       <Navigation />
 
       <Routes>
-        {authCtx.isLoggedIn && (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/sortPage" element={<SortPage />} />
-            <Route path="/movies/:id" element={<MovieDetailsPage />} />
-            <Route path="/movies/search" element={<SearchPage />} />
-            <Route path="*" element={<NotFound />} />
-          </>
-        )}
+        {/* These routes should only be available for non logged in users */}
+        <Route path="/" element={<StartingPageContent />} />
+        <Route path="/auth" element={<AuthPage />} />
 
-        {!authCtx.isLoggedIn && (
-          <>
-            <Route path="/" element={<StartingPageContent />} />
-            <Route path="/auth" element={<AuthPage />} />
-          </>
-        )}
+        {/* These routes should only be available if a user logged in */}
+        <Route path="/" element={<Home />} />
+        <Route path="/sortPage" element={<SortPage />} />
+        <Route path="/movies/:id" element={<MovieDetailsPage />} />
+        <Route path="/movies/search" element={<SearchPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

@@ -7,7 +7,11 @@ const StartingPageContent = () => {
 
   return (
     <section className={classes.starting}>
-      {!isLoggedIn ? <h1> Please Login in to view Movies!</h1> : <Home />}
+      {/* h1 should be display if user is not logged in */}
+      <h1> Please Login in to view Movies!</h1>
+
+      {/* Only display Home if user is logged in */}
+      <Home />
     </section>
   );
 };

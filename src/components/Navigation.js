@@ -25,29 +25,25 @@ const Navigation = () => {
           Movie Listings App
         </Link>
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-          {!isLoggedIn ? (
-            <li>
-              <Link to="/auth">Login</Link>
-            </li>
-          ) : (
-            <>
-              <li>
-                <Link to="/" className="hover:text-blue-200">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/sortPage" className="hover:text-blue-200">
-                  Sort Page
-                </Link>
-              </li>
-              <li>
-                <button onClick={logoutHandler}>Logout</button>
-              </li>
-            </>
-          )}
+          {/* This nav link should only be available for non logged in users */}
+          <li>
+            <Link to="/auth">Login</Link>
+          </li>
 
-          {/* Add more links as needed */}
+          {/* These nav links should only be available if a user logged in */}
+          <li>
+            <Link to="/" className="hover:text-blue-200">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/sortPage" className="hover:text-blue-200">
+              Sort Page
+            </Link>
+          </li>
+          <li>
+            <button onClick={logoutHandler}>Logout</button>
+          </li>
         </ul>
 
         <form onSubmit={handleSubmit}>
