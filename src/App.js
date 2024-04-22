@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
@@ -28,16 +28,12 @@ function App() {
           </>
         )}
 
-        {!authCtx.isLoggedIn ? (
+        {!authCtx.isLoggedIn && (
           <>
             <Route path="/" element={<StartingPageContent />} />
             <Route path="/auth" element={<AuthPage />} />
           </>
-        ) : (
-          <Route path="*" element=<Navigate to="/" /> />
         )}
-
-        {/* Define more routes here */}
       </Routes>
     </>
   );
