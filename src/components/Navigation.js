@@ -22,17 +22,20 @@ const Navigation = () => {
     <nav className="bg-black p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-bold">
-          Movie Listings App
+          {!isLoggedIn ? "Problems" : "Movie Listings App"}
         </Link>
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-          {!isLoggedIn ? (
+          {/* This nav link should only be available for non logged in users */}
+          {!isLoggedIn && (
             <li>
               <Link to="/auth">Login</Link>
             </li>
-          ) : (
+          )}
+          {/* These nav links should only be available if a user logged in */}
+          {isLoggedIn && (
             <>
               <li>
-                <Link to="/" className="hover:text-blue-200">
+                <Link to="/home" className="hover:text-blue-200">
                   Home
                 </Link>
               </li>
@@ -46,8 +49,6 @@ const Navigation = () => {
               </li>
             </>
           )}
-
-          {/* Add more links as needed */}
         </ul>
 
         <form onSubmit={handleSubmit}>

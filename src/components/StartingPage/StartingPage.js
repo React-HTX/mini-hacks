@@ -7,7 +7,9 @@ const StartingPageContent = () => {
 
   return (
     <section className={classes.starting}>
+      {/* h1 should be display if user is not logged in */}
       {!isLoggedIn ? <h1> Please Login in to view Movies!</h1> : <Home />}
+      {/* Only display Home if user is logged in */}
     </section>
   );
 };
