@@ -9,6 +9,9 @@ import SearchPage from "./pages/SearchResults";
 import StartingPageContent from "./components/StartingPage/StartingPage";
 import AuthContext from "./utils/auth-context";
 import AuthPage from "./pages/AuthPage";
+import Problems from "./problems/Problems";
+import ProblemOne from "./problems/ProblemOne";
+import ProblemTwo from "./problems/ProblemTwo";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -18,6 +21,10 @@ function App() {
       <Navigation />
 
       <Routes>
+        <Route path="/" element={<Problems />} />
+        <Route path="/one" element={<ProblemOne />} />
+        <Route path="/two" element={<ProblemTwo />} />
+
         {/* These routes should only be available for non logged in users */}
 
         {!authCtx.isLoggedIn && (
