@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
