@@ -22,7 +22,8 @@ const Navigation = () => {
     <nav className="bg-black p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-bold">
-          Movie Listings App
+          {/* If user is not logged in link should read  */}
+          "Problems" or "Movie Listings App"
         </Link>
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
           {/* This nav link should only be available for non logged in users */}
