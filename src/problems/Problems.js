@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProblemOne from "./ProblemOne";
-import ProblemTwo from "./ProblemTwo";
 
 function Problems() {
   return (
