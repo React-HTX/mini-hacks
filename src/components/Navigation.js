@@ -27,6 +27,8 @@ const Navigation = () => {
         </Link>
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
           {/* This nav link should only be available for non logged in users */}
+          {/* HINT: Relies on isLoggedIn */}
+
           <li>
             <Link to="/auth">Login</Link>
           </li>
