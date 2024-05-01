@@ -13,6 +13,7 @@ import AuthPage from "./pages/AuthPage";
 import Problems from "./problems/Problems";
 import ProblemOne from "./problems/ProblemOne";
 import ProblemTwo from "./problems/ProblemTwo";
+import FirebaseSetup from "./problems/FirebaseSetup";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -23,6 +24,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Problems />} />
+        <Route path="/setup" element={<FirebaseSetup />} />
         <Route path="/one" element={<ProblemOne />} />
         <Route path="/two" element={<ProblemTwo />} />
 
