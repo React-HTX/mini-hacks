@@ -2,7 +2,7 @@ import React from "react";
 
 const FirebaseSetup = () => {
   return (
-    <div className="problems">
+    <div className="problems setup">
       <h1>Firebase Setup</h1>
       <p>
         Navigate to <a href="https://firebase.com"> https://firebase.com</a>,
@@ -10,8 +10,8 @@ const FirebaseSetup = () => {
       </p>
 
       <img
-        src={process.env.PUBLIC_URL + "/goToConsole.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/getStarted.png"}
+        alt="getStarted.png"
       />
       <p>
         This will prompt you to sign in to a google account that you want use
@@ -22,43 +22,71 @@ const FirebaseSetup = () => {
         on Go to Console.
       </p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
+        src={process.env.PUBLIC_URL + "/goToConsole.png"}
         alt="goToConsole.png"
       />
-
+      <p>From here click on Create a Project.</p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/createProject.png"}
+        alt="createProject.png"
       />
-
+      <p>In Step 1 of 3, you'll be prompted to name your project.</p>
+      <img src={process.env.PUBLIC_URL + "/step1.png"} alt="step1.png" />
+      <p>
+        Step 2 will ask if you want to enable Google Analytics for your project.
+        Let's go ahead and enable it and continue.
+      </p>
+      <img src={process.env.PUBLIC_URL + "/step2.png"} alt="step2.png" />
+      <p>
+        For the last step, choose the default account for firebase. Preceed with
+        click Create Project.
+      </p>
+      <img src={process.env.PUBLIC_URL + "/step3.png"} alt="step3.png" />
+      <p>
+        There you go! You created a project in firebase and now can start using
+        their services.
+      </p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/projectpage.png"}
+        alt="projectpage.png"
       />
-
+      <p>
+        Now that we have our project, we want to scroll down and select
+        Authentication.
+      </p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/selectAuth.png"}
+        alt="selectAuth.png"
       />
-
+      <p>
+        This will now active the authentication service and add it to your
+        project shortcuts shown in the left taskbar of the page. This page also
+        prompts us to "Set up sign-in method".
+      </p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/authShortcut.png"}
+        alt="authShortcut.png"
       />
-
+      <p>
+        We are presented with a list of ways to use authentication with many
+        different services. But for this walkthrough, we'll stick to basic
+        "Email/Password".
+      </p>
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/chooseAuthType.png"}
+        alt="chooseAuthType.png"
       />
-
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/authShortcut.png"}
+        alt="authShortcut.png"
       />
-
       <img
-        src={process.env.PUBLIC_URL + "/getStarted.png"}
-        alt="goToConsole.png"
+        src={process.env.PUBLIC_URL + "/authShortcut.png"}
+        alt="authShortcut.png"
+      />
+      <img
+        src={process.env.PUBLIC_URL + "/authShortcut.png"}
+        alt="authShortcut.png"
       />
     </div>
   );
