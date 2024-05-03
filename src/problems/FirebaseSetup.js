@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FirebaseSetup = () => {
   return (
@@ -8,18 +9,14 @@ const FirebaseSetup = () => {
         Navigate to <a href="https://firebase.com"> https://firebase.com</a>,
         and click "Get Started".
       </p>
-
       <img
         src={process.env.PUBLIC_URL + "/getStarted.png"}
         alt="getStarted.png"
       />
       <p>
         This will prompt you to sign in to a google account that you want use
-        for this authentication project.
-      </p>
-      <p>
-        After getting signed in and accepting the google terms (if any), click
-        on Go to Console.
+        for this authentication project. After getting signed in and accepting
+        the google terms (if any), click on Go to Console.
       </p>
       <img
         src={process.env.PUBLIC_URL + "/goToConsole.png"}
@@ -76,18 +73,26 @@ const FirebaseSetup = () => {
         src={process.env.PUBLIC_URL + "/chooseAuthType.png"}
         alt="chooseAuthType.png"
       />
+      <p>Now we need to enable the use of Email/Password</p>
       <img
-        src={process.env.PUBLIC_URL + "/authShortcut.png"}
-        alt="authShortcut.png"
+        src={process.env.PUBLIC_URL + "/enableEmail.png"}
+        alt="enableEmail.png"
       />
+      <p>
+        Once we are done making our selected method, we will need a way to
+        connect to our Firebase Authentication service. By clicking the "Project
+        Overview" gear icon.
+      </p>
       <img
-        src={process.env.PUBLIC_URL + "/authShortcut.png"}
-        alt="authShortcut.png"
+        src={process.env.PUBLIC_URL + "/projectSettings.png"}
+        alt="projectSettings.png"
       />
-      <img
-        src={process.env.PUBLIC_URL + "/authShortcut.png"}
-        alt="authShortcut.png"
-      />
+      <p>From here we have access to our API KEY</p>
+      <img src={process.env.PUBLIC_URL + "/apiKey.png"} alt="apiKey.png" />
+
+      <Link to="/firebaseAPI" className="hover:text-blue-200">
+        Firebase API
+      </Link>
     </div>
   );
 };

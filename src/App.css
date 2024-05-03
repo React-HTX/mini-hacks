@@ -59,10 +59,10 @@
 
 .setup {
   img {
-    width: 40em;
-    height: 30em;
+    width: 60rem;
+    height: 35rem;
   }
   p {
-    padding: 1em 2em;
+    padding: 1rem 4rem;
   }
 }
