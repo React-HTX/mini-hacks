@@ -61,7 +61,7 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        alert("Success");
+        alert(`Logged in with ${data.email}`);
         const expirationTime = new Date(
           new Date().getTime() + +data.expiresIn * 1000
         );
