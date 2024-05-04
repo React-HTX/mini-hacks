@@ -90,8 +90,11 @@ const FirebaseSetup = () => {
       <p>From here we have access to our API KEY</p>
       <img src={process.env.PUBLIC_URL + "/apiKey.png"} alt="apiKey.png" />
 
-      <Link to="/firebaseAPI" className="hover:text-blue-200">
-        Firebase API
+      <Link
+        to="/firebaseAPI"
+        className="hover:text-blue-500 hover:font-bold bg-white text-black border-solid rounded-lg border-4 border-indigo-600 mt-5 "
+      >
+        Head over to {` ---> `} Firebase API
       </Link>
     </div>
   );
