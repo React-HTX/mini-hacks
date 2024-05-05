@@ -56,3 +56,13 @@
 .problems ul {
   margin: 20px;
 }
+
+.setup {
+  img {
+    width: 60rem;
+    height: 35rem;
+  }
+  p {
+    padding: 1rem 4rem;
+  }
+}
