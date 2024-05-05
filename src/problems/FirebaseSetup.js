@@ -92,9 +92,9 @@ const FirebaseSetup = () => {
 
       <Link
         to="/firebaseAPI"
-        className="hover:text-blue-500 hover:font-bold bg-white text-black border-solid rounded-lg border-4 border-indigo-600 mt-5 "
+        className=" hover:font-bold hover:bg-blue-500 bg-blue-300 text-black border-solid rounded-lg border-4 border-indigo-600 mt-5 "
       >
-        Head over to {` ---> `} Firebase API
+        Head over to Firebase API
       </Link>
     </div>
   );
