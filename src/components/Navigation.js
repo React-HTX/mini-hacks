@@ -23,6 +23,7 @@ const Navigation = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-2xl font-bold">
           {/* If user is not logged in link should read  */}
+          {/* HINT: Relies on isLoggedIn */}
           "Problems" or "Movie Listings App"
         </Link>
         <ul className="flex flex-col text-white md:flex-row space-y-2 md:space-y-0 md:space-x-4">
