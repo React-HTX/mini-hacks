@@ -1,128 +1,207 @@
-# What is Next.js?
+# Windows and Mac Setup Guide
+# Setting up React Native Expo Environment on Windows (with Emulator)
 
-> ⚠️ Warning - This project requires Node version 18.7 or greater.
+## Step 1: Install Node.js
+if you have node.js installed skip this step:
 
-From [nextjs.org/](https://nextjs.org/):
+1. Go to [Node.js website](https://nodejs.org/).
+2. Download the LTS version for Windows.
+3. Run the installer, and ensure that `npm` is installed by default.
 
-Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.
+## Step 2: Install Expo CLI
+1. Open **PowerShell** or **Command Prompt** as Administrator.
+2. Run the following command to install Expo CLI globally:
+   ```bash
+   npm install -g expo-cli
+   ```
 
-Under the hood, Next.js also abstracts and automatically configures tooling needed for React, like bundling, compiling, and more. This allows you to focus on building your application instead of spending time with configuration.
+## Step 3: Install Android Studio (for Emulator)
+1. Go to the [Android Studio website](https://developer.android.com/studio).
+2. Download and install Android Studio.
+3. During installation, ensure you select the option to install:
+   - Android SDK
+   - Android SDK Platform
+   - Android Virtual Device (AVD)
+4. Once installed, open Android Studio and:
+   - Go to **Configure** -> **SDK Manager**.
+   - Under **SDK Platforms**, ensure you have the latest **Android API** checked.
+   - Go to **SDK Tools**, and ensure that **Android SDK Build-Tools**, **Android Emulator**, and **Intel HAXM** are checked.
 
-Whether you're an individual developer or part of a larger team, Next.js can help you build interactive, dynamic, and fast React applications.
+## Step 4: Set Up Android Virtual Device (AVD)
+1. In Android Studio, go to **Configure** -> **AVD Manager**.
+2. Click **Create Virtual Device** and select a device.
+3. Choose a **system image** (preferably a recent one with Google Play).
+4. After creating the device, click the **Play** button to launch the emulator.
 
-Project file structure
+## Step 5: Install Expo Go on Emulator
+1. On the emulator, open the **Play Store**.
+2. Search for **Expo Go** and install it.
 
-- You'll spend most of your time in the `pages/movies` and the `components` dir which will contain your movie listings react code.
-- You're also going to use the Nextjs Image component. There's an example of it in the movies file. Here's a [https://nextjs.org/docs/pages/api-reference/components/image](link) to the documentation for it as well.
+## Step 6: Create a New React Native Project with Expo
+1. Open **PowerShell** or **Command Prompt**.
+2. Run the following command to create a new Expo project:
+   ```bash
+   expo init MyNewProject
+   ```
+3. Navigate to the project folder:
+   ```bash
+   cd MyNewProject
+   ```
 
-How Next.js routing works
+## Step 7: Start the Expo Server
+1. In the project directory, start the Expo development server:
+   ```bash
+   expo start
+   ```
+2. This will open a browser window with the Expo Developer Tools.
 
-- Right now we'll focus on how pages are created in Next.js
-  How tailwind works
+## Step 8: Run the App on the Emulator
+1. In Expo Developer Tools, select **Run on Android device/emulator**.
+2. Your app should now load on the Android emulator.
 
-  This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Step 9: Troubleshooting
+- Ensure the emulator is running before starting the app.
+- If the emulator does not appear in Expo, try restarting Android Studio and the emulator.
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+==================================================================================================================================================================================================================
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# React Native Expo Setup on Mac (with iOS Simulator)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prerequisites
+Before we start, ensure your Mac meets the following requirements:
+- macOS 10.15.7 (Catalina) or higher.
+- Xcode (for iOS Simulator).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Step 1: Install Homebrew
+Homebrew is a package manager for macOS, which simplifies installing software.
 
-&nbsp;
+1. Open your terminal and run the following command to install Homebrew:
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 
-## Tailwindcss
+2. After installation, ensure Homebrew is up to date:
+    ```bash
+    brew update
+    ```
 
-Here's a [short explanation](https://tailwindcss.com/docs/utility-first) on how tailwindcss works.
+## Step 2: Install Node.js and npm
+Expo requires Node.js, which comes with npm (Node Package Manager).
 
-- In short, tailwindcss creates utility classes that you can write right into your `html`.
+IF YOU HAVE NODE.JS INSTALLED SKIP THIS STEP
 
-With tailwindcss:
+1. Install Node.js using Homebrew:
+    ```bash
+    brew install node
+    ```
 
-```html
-<div
-  class="text-base sm:text-lg md:text-base lg:text-lg xl:text-xl 2xl:text-2xl"
->
-  This is a small font text that changes size with the screen width.
-</div>
-```
+2. Verify the installation:
+    ```bash
+    node -v
+    npm -v
+    ```
 
-CSS only:
+## Step 3: Install Expo CLI
+Expo CLI is the command-line tool to create and manage React Native projects with Expo.
 
-```css
-.large-font {
-  font-size: 40px;
-}
-.small-font {
-  font-size: 20px;
-}
+1. Install Expo CLI globally:
+    ```bash
+    npm install -g expo-cli
+    ```
 
-/* Larger screens (e.g., desktops or laptops) */
-@media screen and (min-width: 1200px) {
-  .large-font {
-    font-size: 48px; /* Slightly larger font size for larger screens */
-  }
-  .small-font {
-    font-size: 24px; /* Slightly larger font size for larger screens */
-  }
-}
-```
+2. Verify the installation:
+    ```bash
+    expo --version
+    ```
 
-```html
-<h1 className="large-font">Text</h1>
-<p className="small-font">Text</p>
-```
+## Step 4: Install Xcode for iOS Simulator
+Xcode is necessary to run the iOS Simulator.
 
-## Heroicons
+1. Install Xcode from the Mac App Store:
+    - Open the **App Store**, search for **Xcode**, and install it.
 
-- Browse the icons at [heroicons.com](https://heroicons.com/)
-- Find the documentation at [github.com/tailwindlabs/heroicons](https://github.com/tailwindlabs/heroicons)
+2. After installation, open Xcode and go to **Preferences** > **Components**.
+    - Download and install the latest **iOS Simulator**.
 
-## Learn More
+3. Accept Xcode's license:
+    ```bash
+    sudo xcodebuild -license accept
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Verify Xcode is installed correctly:
+    ```bash
+    xcode-select --install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Step 5: Create a New React Native Project Using Expo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. In your terminal, navigate to the folder where you want to create your project, and run the following command:
+    ```bash
+    expo init MyNewProject
+    ```
 
-## Deploy on Vercel
+2. You will be prompted to choose a template:
+    - Choose the **blank** template for a minimal setup.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Once the project is created, navigate to the project directory:
+    ```bash
+    cd MyNewProject
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Step 6: Start the Project
 
-## How to clone the repository using codespaces
+1. Start the development server:
+    ```bash
+    expo start
+    ```
+    then press i to open ios app
 
-Click the "Code" dropdown button (usually green, located near the top right of the repository page).
-In the dropdown, you'll see an option for "Open with Codespaces." Click on it.
-Create a New Codespace:
+2. This will open the Expo developer tools in your web browser.
 
-If no Codespaces have been created for this repository in your account, you'll have the option to create a new one.
-Click on “New codespace” at the bottom of the panel.
-This will start the process of creating a cloud-based development environment for that repository.
-Configure the Codespace (if necessary):
+## Step 7: Running on iOS Simulator
 
-Depending on the repository, you might have options to configure the Codespace, like selecting the branch, machine type, or configuration settings.
-After configuration, GitHub will set up the environment, which can take a few moments.
-Access the Codespace:
+1. In the Expo developer tools, click on the **Run on iOS Simulator** option.
+    - This will automatically open the iOS Simulator if it’s installed.
 
-Once set up, you'll be taken to a VS Code-like environment in your browser, loaded with the repository's code.
-You can now edit, run, and commit changes to the repository directly from this environment.
-Working with the Repository:
+    Alternatively, you can manually open the simulator:
+    ```bash
+    open -a Simulator
+    ```
 
-You can work with the repository as if it was cloned on your local machine. Any changes you make can be committed and pushed back to the repository on GitHub.
+2. Select the desired device (iPhone, iPad, etc.) from the **Simulator** app if not already open.
+
+3. In the Expo developer tools, click **Run on iOS Simulator** again, and your app should load.
+
+## Step 8: Running on a Physical Device (Optional)
+THIS STEP IS OPTIONAL:
+
+1. Download the **Expo Go** app from the App Store on your iPhone.
+
+2. In the Expo developer tools, scan the QR code with the Expo Go app to run your project on your physical device.
+
+---
+
+## Common Commands
+
+- **Start Expo Development Server**:
+    ```bash
+    expo start
+    ```
+
+- **Build a Standalone App**:
+    ```bash
+    expo build:ios
+    ```
+
+## Troubleshooting
+
+- If the iOS Simulator doesn’t start, make sure Xcode is installed correctly and the necessary simulators are downloaded.
+- To check for issues with your setup, run:
+    ```bash
+    expo diagnostics
+    ```
+
+## Conclusion
+You’ve successfully set up the React Native environment using Expo on your Mac. Now you can start building and testing React Native apps using the iOS simulator.
