@@ -1,207 +1,50 @@
-# Windows and Mac Setup Guide
-# Setting up React Native Expo Environment on Windows (with Emulator)
+# Welcome to your Expo app 👋
 
-## Step 1: Install Node.js
-if you have node.js installed skip this step:
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-1. Go to [Node.js website](https://nodejs.org/).
-2. Download the LTS version for Windows.
-3. Run the installer, and ensure that `npm` is installed by default.
+## Get started
 
-## Step 2: Install Expo CLI
-1. Open **PowerShell** or **Command Prompt** as Administrator.
-2. Run the following command to install Expo CLI globally:
+1. Install dependencies
+
    ```bash
-   npm install -g expo-cli
+   npm install
    ```
 
-## Step 3: Install Android Studio (for Emulator)
-1. Go to the [Android Studio website](https://developer.android.com/studio).
-2. Download and install Android Studio.
-3. During installation, ensure you select the option to install:
-   - Android SDK
-   - Android SDK Platform
-   - Android Virtual Device (AVD)
-4. Once installed, open Android Studio and:
-   - Go to **Configure** -> **SDK Manager**.
-   - Under **SDK Platforms**, ensure you have the latest **Android API** checked.
-   - Go to **SDK Tools**, and ensure that **Android SDK Build-Tools**, **Android Emulator**, and **Intel HAXM** are checked.
+2. Start the app
 
-## Step 4: Set Up Android Virtual Device (AVD)
-1. In Android Studio, go to **Configure** -> **AVD Manager**.
-2. Click **Create Virtual Device** and select a device.
-3. Choose a **system image** (preferably a recent one with Google Play).
-4. After creating the device, click the **Play** button to launch the emulator.
-
-## Step 5: Install Expo Go on Emulator
-1. On the emulator, open the **Play Store**.
-2. Search for **Expo Go** and install it.
-
-## Step 6: Create a New React Native Project with Expo
-1. Open **PowerShell** or **Command Prompt**.
-2. Run the following command to create a new Expo project:
    ```bash
-   expo init MyNewProject
-   ```
-3. Navigate to the project folder:
-   ```bash
-   cd MyNewProject
+    npx expo start
    ```
 
-## Step 7: Start the Expo Server
-1. In the project directory, start the Expo development server:
-   ```bash
-   expo start
-   ```
-2. This will open a browser window with the Expo Developer Tools.
+In the output, you'll find options to open the app in a
 
-## Step 8: Run the App on the Emulator
-1. In Expo Developer Tools, select **Run on Android device/emulator**.
-2. Your app should now load on the Android emulator.
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-## Step 9: Troubleshooting
-- Ensure the emulator is running before starting the app.
-- If the emulator does not appear in Expo, try restarting Android Studio and the emulator.
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Get a fresh project
 
+When you're ready, run:
 
-==================================================================================================================================================================================================================
+```bash
+npm run reset-project
+```
 
-# React Native Expo Setup on Mac (with iOS Simulator)
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Prerequisites
-Before we start, ensure your Mac meets the following requirements:
-- macOS 10.15.7 (Catalina) or higher.
-- Xcode (for iOS Simulator).
+## Learn more
 
-## Step 1: Install Homebrew
-Homebrew is a package manager for macOS, which simplifies installing software.
+To learn more about developing your project with Expo, look at the following resources:
 
-1. Open your terminal and run the following command to install Homebrew:
-    ```bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-2. After installation, ensure Homebrew is up to date:
-    ```bash
-    brew update
-    ```
+## Join the community
 
-## Step 2: Install Node.js and npm
-Expo requires Node.js, which comes with npm (Node Package Manager).
+Join our community of developers creating universal apps.
 
-IF YOU HAVE NODE.JS INSTALLED SKIP THIS STEP
-
-1. Install Node.js using Homebrew:
-    ```bash
-    brew install node
-    ```
-
-2. Verify the installation:
-    ```bash
-    node -v
-    npm -v
-    ```
-
-## Step 3: Install Expo CLI
-Expo CLI is the command-line tool to create and manage React Native projects with Expo.
-
-1. Install Expo CLI globally:
-    ```bash
-    npm install -g expo-cli
-    ```
-
-2. Verify the installation:
-    ```bash
-    expo --version
-    ```
-
-## Step 4: Install Xcode for iOS Simulator
-Xcode is necessary to run the iOS Simulator.
-
-1. Install Xcode from the Mac App Store:
-    - Open the **App Store**, search for **Xcode**, and install it.
-
-2. After installation, open Xcode and go to **Preferences** > **Components**.
-    - Download and install the latest **iOS Simulator**.
-
-3. Accept Xcode's license:
-    ```bash
-    sudo xcodebuild -license accept
-    ```
-
-4. Verify Xcode is installed correctly:
-    ```bash
-    xcode-select --install
-    ```
-
-## Step 5: Create a New React Native Project Using Expo
-
-1. In your terminal, navigate to the folder where you want to create your project, and run the following command:
-    ```bash
-    expo init MyNewProject
-    ```
-
-2. You will be prompted to choose a template:
-    - Choose the **blank** template for a minimal setup.
-
-3. Once the project is created, navigate to the project directory:
-    ```bash
-    cd MyNewProject
-    ```
-
-## Step 6: Start the Project
-
-1. Start the development server:
-    ```bash
-    expo start
-    ```
-    then press i to open ios app
-
-2. This will open the Expo developer tools in your web browser.
-
-## Step 7: Running on iOS Simulator
-
-1. In the Expo developer tools, click on the **Run on iOS Simulator** option.
-    - This will automatically open the iOS Simulator if it’s installed.
-
-    Alternatively, you can manually open the simulator:
-    ```bash
-    open -a Simulator
-    ```
-
-2. Select the desired device (iPhone, iPad, etc.) from the **Simulator** app if not already open.
-
-3. In the Expo developer tools, click **Run on iOS Simulator** again, and your app should load.
-
-## Step 8: Running on a Physical Device (Optional)
-THIS STEP IS OPTIONAL:
-
-1. Download the **Expo Go** app from the App Store on your iPhone.
-
-2. In the Expo developer tools, scan the QR code with the Expo Go app to run your project on your physical device.
-
----
-
-## Common Commands
-
-- **Start Expo Development Server**:
-    ```bash
-    expo start
-    ```
-
-- **Build a Standalone App**:
-    ```bash
-    expo build:ios
-    ```
-
-## Troubleshooting
-
-- If the iOS Simulator doesn’t start, make sure Xcode is installed correctly and the necessary simulators are downloaded.
-- To check for issues with your setup, run:
-    ```bash
-    expo diagnostics
-    ```
-
-## Conclusion
-You’ve successfully set up the React Native environment using Expo on your Mac. Now you can start building and testing React Native apps using the iOS simulator.
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
