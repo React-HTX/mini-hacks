@@ -51,7 +51,7 @@ if you have node.js installed skip this step:
 ## Step 7: Start the Expo Server
 1. In the project directory, start the Expo development server:
    ```bash
-   expo start
+   npx expo start
    ```
 2. This will open a browser window with the Expo Developer Tools.
 
@@ -154,7 +154,7 @@ Xcode is necessary to run the iOS Simulator.
 
 1. Start the development server:
     ```bash
-    expo start
+    npx expo start
     ```
     then press i to open ios app
 
@@ -187,7 +187,7 @@ THIS STEP IS OPTIONAL:
 
 - **Start Expo Development Server**:
     ```bash
-    expo start
+    npx expo start
     ```
 
 - **Build a Standalone App**:
