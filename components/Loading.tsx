@@ -1,4 +1,4 @@
-// components/Loading.tsx
+
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet, Text } from 'react-native';
 
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'transparent', // Keep it transparent for overlay-style loading
+        backgroundColor: 'transparent',
     },
     loadingText: {
         color: 'white',

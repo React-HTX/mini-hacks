@@ -13,7 +13,7 @@ import {
 interface Movie {
     id: number;
     title: string;
-    poster_path: string | null; // Poster path can be null
+    poster_path: string | null;
 }
 
 interface MovieListProps {
@@ -80,13 +80,13 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 8,
         marginBottom: 5,
-        backgroundColor: '#ccc', // Add background color in case image fails to load
+        backgroundColor: '#ccc',
     },
     movieTitle: {
         textAlign: 'center',
         fontSize: 12,
         fontWeight: 'bold',
-        color: 'black', // Ensure text is visible on dark backgrounds
+        color: 'black',
     },
     sectionTitle: {
         fontSize: 24,

@@ -13,23 +13,21 @@ import { Link } from 'expo-router';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { XMarkIcon } from 'react-native-heroicons/outline';
-import { useNavigation } from '@react-navigation/native';
-import { fallbackMoviePoster, image185, searchMovies } from '../utils/request';  // Import searchMovies function
+import { fallbackMoviePoster, image185, searchMovies } from '../utils/request';
 
-import Loading from '../components/Loading';  // Import Loading component
+import Loading from '../components/Loading';
 
 interface Movie {
     id: number;
     poster_path: string;
     title: string;
-    [key: string]: any; // Add other properties as needed
+    [key: string]: any;
 }
 
 
 const { width, height } = Dimensions.get('window');
 
 export default function SearchScreen() {
-    const navigation = useNavigation();
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<Movie[]>([]);
 
@@ -54,7 +52,7 @@ export default function SearchScreen() {
 
     return (
         <SafeAreaView style={styles.safeArea}>
-            {/* Search Input */}
+
             <View style={styles.searchContainer}>
                 <TextInput
                     onChangeText={handleSearch}
@@ -69,7 +67,7 @@ export default function SearchScreen() {
                 </TouchableOpacity>
             </View>
 
-            {/* Search Results or Loading */}
+
             {loading ? (
                 <Loading />
             ) : results.length > 0 ? (
@@ -113,7 +111,7 @@ export default function SearchScreen() {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: 'white', // Adjust background color as needed
+        backgroundColor: 'white',
     },
     searchContainer: {
         flexDirection: 'row',
