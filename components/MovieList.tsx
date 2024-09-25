@@ -8,6 +8,8 @@ import {
     StyleSheet,
     ActivityIndicator,
     TouchableOpacity,
+    ScrollView,
+    Platform,
 } from 'react-native';
 
 interface Movie {
@@ -22,9 +24,9 @@ interface MovieListProps {
     loading: boolean;
 }
 
-const fallbackPoster = 'https://via.placeholder.com/100x150.png?text=No+Image'; // Fallback image
+const fallbackPoster = 'https://via.placeholder.com/100x150.png?text=No+Image';
 
-const MovieList: React.FC<MovieListProps> = ({ title, data, loading }) => {
+export default function MovieList({ title, data, loading }: MovieListProps) {
     const renderMovieItem = ({ item }: { item: Movie }) => (
         <TouchableOpacity style={styles.movieItem}>
             <Link
@@ -57,13 +59,24 @@ const MovieList: React.FC<MovieListProps> = ({ title, data, loading }) => {
     return (
         <View style={{ marginVertical: 20 }}>
             <Text style={styles.sectionTitle}>{title}</Text>
-            <FlatList
-                data={data}
-                renderItem={renderMovieItem}
-                keyExtractor={(item) => item.id.toString()}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-            />
+
+            {Platform.OS === 'web' ? (
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator
+                    style={styles.scrollViewWeb}
+                >
+                    {data.map((item) => renderMovieItem({ item }))}
+                </ScrollView>
+            ) : (
+                <FlatList
+                    data={data}
+                    renderItem={renderMovieItem}
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            )}
         </View>
     );
 };
@@ -73,7 +86,7 @@ const styles = StyleSheet.create({
         marginRight: 15,
         alignItems: 'center',
         width: 120,
-        marginLeft: 10
+        marginLeft: 10,
     },
     movieImage: {
         width: 100,
@@ -95,7 +108,9 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: 'black',
     },
+    scrollViewWeb: {
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        overflow: 'scroll',
+    },
 });
-
-export default MovieList;
-

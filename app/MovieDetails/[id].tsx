@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     ScrollView,
     StyleSheet,
+    Platform,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -59,12 +60,29 @@ export default function MovieDetails() {
         }
     };
 
-    return (
-        <ScrollView contentContainerStyle={styles.scrollView} style={styles.container}>
+    const handleBackPress = () => {
+        if (Platform.OS === 'web') {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                router.push('/MoviesScreen');
+            }
+        } else {
+            router.back();
+        }
+    };
 
+    return (
+        <ScrollView
+            contentContainerStyle={[
+                styles.scrollView,
+                Platform.OS === 'web' && styles.scrollViewWeb
+            ]}
+            style={styles.container}
+        >
             <View style={styles.posterContainer}>
                 <SafeAreaView style={styles.safeAreaView}>
-                    <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+                    <TouchableOpacity style={styles.backButton} onPress={handleBackPress}>
                         <ChevronLeftIcon size="28" strokeWidth={2.5} color="white" />
                     </TouchableOpacity>
                 </SafeAreaView>
@@ -72,42 +90,37 @@ export default function MovieDetails() {
                 {loading ? (
                     <Loading />
                 ) : (
-                    <View style={styles.posterWrapper}>
+                    <View style={[styles.posterWrapper, Platform.OS === 'web' && styles.posterWrapperWeb]}>
                         <Image
                             source={{ uri: image500(movie?.poster_path) || fallbackMoviePoster }}
-                            style={styles.moviePoster}
+                            style={[styles.moviePoster, Platform.OS === 'web' && styles.moviePosterWeb]}
                         />
                     </View>
                 )}
             </View>
 
-
             <View style={styles.detailsContainer}>
-
                 <Text style={styles.movieTitle}>{movie?.title}</Text>
 
                 {movie?.id && (
                     <Text style={styles.movieInfo}>
-                        {movie.status} • {movie.release_date?.split('-')[0] || 'N/A'} • {movie.runtime} min
+                        {movie.status} - {movie.release_date?.split('-')[0] || 'N/A'} - {movie.runtime} min
                     </Text>
                 )}
-
 
                 <View style={styles.genresContainer}>
                     {movie?.genres?.map((genre, index) => {
                         const showDot = index + 1 !== movie.genres.length;
                         return (
                             <Text key={index} style={styles.genreText}>
-                                {genre.name} {showDot ? '•' : null}
+                                {genre.name} {showDot ? '- ' : null}
                             </Text>
                         );
                     })}
                 </View>
 
-
                 <Text style={styles.description}>{movie?.overview}</Text>
             </View>
-
 
             {movie?.id && similarMovies.length > 0 && (
                 <MovieList title="Similar Movies" data={similarMovies} loading={loading} />
@@ -124,11 +137,15 @@ const styles = StyleSheet.create({
     scrollView: {
         paddingBottom: 20,
     },
+    scrollViewWeb: {
+        paddingLeft: 150,
+        paddingRight: 150,
+    },
     posterContainer: {
         width: '100%',
         alignItems: 'center',
         marginTop: 20,
-        paddingTop: 50
+        paddingTop: 50,
     },
     safeAreaView: {
         position: 'absolute',
@@ -153,10 +170,18 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         backgroundColor: '#333',
     },
+    posterWrapperWeb: {
+        width: 350,
+        height: 525,
+    },
     moviePoster: {
         width: '100%',
         height: '100%',
         resizeMode: 'cover',
+    },
+    moviePosterWeb: {
+        width: 350,
+        height: 525,
     },
     detailsContainer: {
         paddingHorizontal: 16,
@@ -191,4 +216,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
-

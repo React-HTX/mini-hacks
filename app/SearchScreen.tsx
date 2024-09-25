@@ -8,6 +8,7 @@ import {
     TouchableWithoutFeedback,
     Dimensions,
     StyleSheet,
+    Platform,
 } from 'react-native';
 import { Link } from 'expo-router';
 import React, { useState } from 'react';
@@ -23,7 +24,6 @@ interface Movie {
     title: string;
     [key: string]: any;
 }
-
 
 const { width, height } = Dimensions.get('window');
 
@@ -51,8 +51,7 @@ export default function SearchScreen() {
     };
 
     return (
-        <SafeAreaView style={styles.safeArea}>
-
+        <SafeAreaView style={[styles.safeArea, Platform.OS === 'web' && styles.safeAreaWeb]}>
             <View style={styles.searchContainer}>
                 <TextInput
                     onChangeText={handleSearch}
@@ -61,12 +60,11 @@ export default function SearchScreen() {
                     style={styles.searchInput}
                 />
                 <TouchableOpacity style={styles.closeButton}>
-                    <Link replace href={'/MoviesScreen'}>
+                    <Link push href={'/MoviesScreen'}>
                         <XMarkIcon size="25" color="white" />
                     </Link>
                 </TouchableOpacity>
             </View>
-
 
             {loading ? (
                 <Loading />
@@ -78,7 +76,7 @@ export default function SearchScreen() {
                     <Text style={styles.resultsText}>Results ({results.length})</Text>
                     <View style={styles.resultsContainer}>
                         {results.map((item: Movie, index: number) => (
-                            <TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback key={item.id}>
                                 <Link
                                     href={{
                                         pathname: '/MovieDetails/[id]',
@@ -88,7 +86,12 @@ export default function SearchScreen() {
                                     <View style={styles.resultItem}>
                                         <Image
                                             source={{ uri: image185(item.poster_path) || fallbackMoviePoster }}
-                                            style={[styles.moviePoster, { width: width * 0.44, height: height * 0.3 }]}
+                                            style={[
+                                                styles.moviePoster,
+                                                Platform.OS === 'web'
+                                                    ? { width: 225, height: 300 }
+                                                    : { width: width * 0.44, height: height * 0.3 },
+                                            ]}
                                         />
                                         <Text style={styles.movieTitle}>
                                             {item.title.length > 22 ? item.title.slice(0, 22) + '...' : item.title}
@@ -112,6 +115,10 @@ const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
         backgroundColor: 'white',
+    },
+    safeAreaWeb: {
+        paddingLeft: 100,
+        paddingRight: 100,
     },
     searchContainer: {
         flexDirection: 'row',
@@ -163,7 +170,7 @@ const styles = StyleSheet.create({
         color: 'black',
         marginTop: 4,
         marginLeft: 4,
-        fontSize: 12,
+        fontSize: 22,
     },
     noResultsContainer: {
         flex: 1,
